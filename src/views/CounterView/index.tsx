@@ -1,18 +1,24 @@
 "use client"
 
-import { useState } from "react"
+import { useState ,useEffect, } from "react"
 
-
+//useEffect は変更を検知して処理を実行することができる関数です。
 
 export function CounterView(){
     const [count,setCount]=useState(0)
     const handlePlusButtonClick =()=>{
+        console.log("プラスボタンが押されました。")
         setCount(count+1)
     }
     const handleMinusButtonClick=()=>{
+        console.log("マイナスボタンが押されました。")
         if (count <=0)return
         setCount(count-1)
     }
+
+    useEffect(()=>{
+        console.log("現在のカウント",count)
+    },[count])
 
     return(
         <div style ={{maxWidth:400,margin:"40px auto",textAlign:"center"}}>
