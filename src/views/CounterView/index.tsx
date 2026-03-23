@@ -1,25 +1,17 @@
 "use client"
 
-import { mdxCompile } from "next/dist/build/swc/generated-native"
-import { useState ,useEffect, } from "react"
+import { useCounterView } from "./hooks"
+
 
 //useEffect は変更を検知して処理を実行することができる関数です。
 
 export function CounterView(){
-    const [count,setCount]=useState(0)
-    const handlePlusButtonClick =()=>{
-        console.log("プラスボタンが押されました。")
-        setCount(count+1)
-    }
-    const handleMinusButtonClick=()=>{
-        console.log("マイナスボタンが押されました。")
-        if (count <=0)return
-        setCount(count-1)
-    }
-
-    useEffect(()=>{
-        console.log("現在のカウント",count)
-    },[count])
+    const {
+        count,
+        handlePlusButtonClick,
+        handleMinusButtonClick,
+        
+    } =useCounterView()
 
     return(
         <div className="max-w-md mx-auto mt-10 text-center">
