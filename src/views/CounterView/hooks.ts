@@ -1,6 +1,6 @@
 import { useEffect,useState } from "react"
+import {Mode} from "./types"
 
-export type Mode = "both" |"plusOnly"| "minusOnly"
 
 export const useCounterView=()=>{
     const [count,setCount]=useState(0)

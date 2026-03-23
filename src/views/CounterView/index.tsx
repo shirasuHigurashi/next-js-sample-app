@@ -1,7 +1,7 @@
 "use client"
 
-import { Mode,useCounterView } from "./hooks"
-
+import { useCounterView } from "./hooks"
+import {Mode} from "./types"
 
 //useEffect は変更を検知して処理を実行することができる関数です。
 
