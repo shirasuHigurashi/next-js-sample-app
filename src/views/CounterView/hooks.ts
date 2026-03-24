@@ -23,12 +23,17 @@ export const useCounterView=()=>{
         console.log("現在のカウント",count)
     },[count])
 
+    const testFunction=(n:number)=>{
+        return n+1
+    }
+
     return{
         count,
         handlePlusButtonClick,
         handleMinusButtonClick,
         handleChangeMode,
         selectMode,
+        testFunction
     }
 
 }
